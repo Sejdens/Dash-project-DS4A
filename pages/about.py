@@ -8,6 +8,10 @@ from dash_labs.plugins import register_page
 import pandas as pd
 import plotly.express as px
 
+################################################################################################
+# Import components
+################################################################################################
+from components.kpi.kpibadge import kpibadge
 
 ################################################################################################
 # Route

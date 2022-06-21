@@ -25,11 +25,10 @@ import os
 ################################################################################################
 # Instance declaration
 ################################################################################################
-request_path_prefix = None
+request_path_prefix = "/"
 app = dash.Dash(
     __name__,
     external_stylesheets=[dbc.themes.FLATLY],
-    requests_pathname_prefix=request_path_prefix,
     plugins=[dl.plugins.pages],
     meta_tags=[{'name':'viewport', 'content':'width=device-width, initial-scale=1.0'}]
 )
@@ -79,4 +78,4 @@ app.layout = dbc.Container(
 server = app.server
 
 if __name__ == "__main__":
-    app.run_server(host='0.0.0.0',port='8050', debug=True, threaded=True)
+    app.run_server(host='0.0.0.0',port='8050', debug=True)

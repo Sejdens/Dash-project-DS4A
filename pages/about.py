@@ -22,11 +22,14 @@ df = pd.read_csv("./data/BASE_FINAL.csv")
 ###############
 # Genero P6020
 ###############
-dic_P6020={"1":"Male","2": "Female"}
-df.P6020=df.P6020.astype("str").replace(dic_P6020, regex=False)
-genero=df[["P6020","FEX_C"]].groupby('P6020')['FEX_C'].sum().reset_index(name="Total") # con sum para sumar el factor de expancion
-g = px.bar(x="P6020",  y="Total", data_frame=genero,
-           title=("Distribution by Gender"),
+dic_P6020 = { "1":"Male","2": "Female" }
+df.P6020 = df.P6020.astype("str").replace(dic_P6020, regex=False)
+genero = df[["P6020","FEX_C"]].groupby('P6020')['FEX_C'].sum().reset_index(name="Total") # con sum para sumar el factor de expancion
+g = px.bar(
+    x = "P6020",
+    y = "Total",
+    data_frame = genero,
+    title = ("Distribution by Gender"),
 )
 # px.xlabel("Gender")
 # px.ylabel("Population")
@@ -35,27 +38,14 @@ g = px.bar(x="P6020",  y="Total", data_frame=genero,
 ################################################################################################
 # Create Layout
 ################################################################################################
-layout = dbc.Row([
-    dbc.Col(
-        html.Nav(
-            [
-                html.P("asdf"),
-            ],
-            className="nav",
-        ),
-        width=2,
-        align="stretch",
-        class_name="navbar",
-    ),
-    dbc.Col(
-        html.Div([
-            html.H2("asdf", id='title'),
+layout = dbc.Container([
+    dbc.Row([
+        dbc.Col([
+            html.H1(["Title"], id='title'),
             dcc.Graph(figure=g,id='main-figure'),
             dcc.Slider(min=0,max=1,marks={0:'US Map', 1:'Scatter Plot'},value=0,id='fig-slider',),
-        ]),
-        width=6
-    ),
-],
-align="baseline",
-justify="left",
-)
+        ],
+        lg=12,
+        ),
+    ]),
+])

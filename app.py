@@ -40,7 +40,7 @@ navbar = dbc.NavbarSimple([
     dbc.NavItem(dbc.NavLink("Home", href=request_path_prefix)),
     dbc.DropdownMenu(
         [
-            dbc.DropdownMenuItem(page["name"], href=request_path_prefix+page["path"])
+            dbc.DropdownMenuItem(page["name"], href=page["path"])
             for page in dash.page_registry.values()
             if page["module"] != "pages.not_found_404"
         ],

@@ -7,6 +7,7 @@ from IPython.core.display import display, HTML
 import warnings
 
 from dash import Dash, callback, html, dcc, dash_table, Input, Output, State, MATCH, ALL #, ClientsideFunction
+import dash_labs as dl
 import dash_bootstrap_components as dbc
 
 import pandas as pd
@@ -37,11 +38,12 @@ g = px.bar(x="P6020",  y="Total", data_frame=genero,
 ################################################################################################
 # Create the app
 ################################################################################################
-app = Dash(__name__,
-            requests_pathname_prefix=request_path_prefix,
-            external_stylesheets=[dbc.themes.FLATLY],
-            hot_reload=True,
-                meta_tags=[{'name':'viewport', 'content':'width=device-width, initial-scale=1.0'}])
+app = Dash(
+    __name__,
+    external_stylesheets=[dbc.themes.FLATLY],
+    plugins=[dl.plugins.pages],
+    meta_tags=[{'name':'viewport', 'content':'width=device-width, initial-scale=1.0'}]
+)
 
 ################################################################################################
 # Create Layout

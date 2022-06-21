@@ -25,13 +25,53 @@ import os
 ################################################################################################
 # Instance declaration
 ################################################################################################
+request_path_prefix = None
 app = dash.Dash(
     __name__,
     external_stylesheets=[dbc.themes.FLATLY],
+    requests_pathname_prefix=request_path_prefix,
     plugins=[dl.plugins.pages],
     meta_tags=[{'name':'viewport', 'content':'width=device-width, initial-scale=1.0'}]
 )
 
+################################################################################################
+# Navbar
+################################################################################################
+navbar = dbc.NavbarSimple([
+    dbc.NavItem(dbc.NavLink("Home", href=request_path_prefix)),
+    dbc.DropdownMenu(
+        [
+            dbc.DropdownMenuItem(page["name"], href=request_path_prefix+page["path"])
+            for page in dash.page_registry.values()
+            if page["module"] != "pages.not_found_404"
+        ],
+        nav=True,
+        label="Data Science",
+    ),
+    dbc.NavItem(dbc.NavLink("Us", href=request_path_prefix+"/us")),
+    ],
+    brand="DS4A Project - Team 148",
+    color="primary",
+    dark=True,
+    className="mb-2",
+)
+
+################################################################################################
+# Main layout
+################################################################################################
+app.layout = dbc.Container(
+    [
+        navbar,
+        dl.plugins.page_container,
+    ],
+    className="dbc",
+    fluid=True,
+)
+
+################################################################################################
+# Register Callbacks
+################################################################################################
+# register_callbacks(app)
 
 ################################################################################################
 # Initiate the server where the app will work

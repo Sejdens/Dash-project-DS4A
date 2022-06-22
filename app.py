@@ -37,7 +37,7 @@ app = dash.Dash(
 # Navbar
 ################################################################################################
 navbar = dbc.NavbarSimple([
-    dbc.NavItem(dbc.NavLink("Home", href=request_path_prefix)),
+    dbc.NavItem(dbc.NavLink("About", href=request_path_prefix+"about")),
     dbc.DropdownMenu(
         [
             dbc.DropdownMenuItem(page["name"], href=page["path"])
@@ -47,7 +47,7 @@ navbar = dbc.NavbarSimple([
         nav=True,
         label="Data Science",
     ),
-    dbc.NavItem(dbc.NavLink("Us", href=request_path_prefix+"/us")),
+    dbc.NavItem(dbc.NavLink("Test", href=request_path_prefix+"test")),
     ],
     brand="DS4A Project - Team 148",
     color="primary",

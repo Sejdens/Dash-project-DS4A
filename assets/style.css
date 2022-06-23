@@ -33,6 +33,7 @@ nav {
   max-width: 300px;
   color: black;
   border-radius: 15px;
+  box-shadow: 4px 5px 2px #aaa;
 }
 
 .kpi__title {

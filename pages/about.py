@@ -11,7 +11,7 @@ import plotly.express as px
 ################################################################################################
 # Import components
 ################################################################################################
-from components.kpi.kpibadge import kpibadge
+from components.kpi.kpicard import kpicard
 
 ################################################################################################
 # Route
@@ -39,6 +39,9 @@ g = px.bar(
 # px.ylabel("Population")
 # px.xticks((0, 1), ("Male", "Female"))
 
+kpi_total = kpicard("Total population", "7'428.432", "person.svg")
+kpi_vul = kpicard("Vulnerable People", "523.435", "charity.svg")
+
 ################################################################################################
 # Create Layout
 ################################################################################################
@@ -49,7 +52,11 @@ layout = dbc.Container([
             dcc.Graph(figure=g,id='main-figure'),
             dcc.Slider(min=0,max=1,marks={0:'US Map', 1:'Scatter Plot'},value=0,id='fig-slider',),
         ],
-        lg=12,
+        lg=6,
         ),
+        dbc.Col([
+            kpi_total.display(),
+            kpi_vul.display(),
+        ])
     ]),
 ])

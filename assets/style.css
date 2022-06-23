@@ -21,3 +21,37 @@ nav {
 .navbar {
   background-color: #339;
 }
+
+.card {
+  background-color: #217055;
+  padding: 1rem;
+  margin: 2rem;
+  max-width: 300px;
+  color: black;
+  border-radius: 15px;
+}
+
+.kpi__title {
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+.kpi__div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: baseline;
+  margin: 1rem;
+  overflow-wrap: break-word;
+}
+
+.kpi__number {
+  overflow-wrap: break-word;
+  font-size: 1.5rem;
+  width: 80%;
+  margin: 0;
+}
+
+.kpi__icon {
+  max-height: 3rem; 
+}

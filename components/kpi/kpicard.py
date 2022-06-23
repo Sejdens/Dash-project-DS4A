@@ -18,6 +18,6 @@ class kpicard:
                     className="kpi__div",
                 )
             ],
-            className = "m-4 mx-auto card",
+            className = "my-4 mx-auto kpicard",
         )
         return layout

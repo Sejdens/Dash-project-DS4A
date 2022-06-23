@@ -23,9 +23,12 @@ nav {
 }
 
 .card {
+  padding: 1rem;
+}
+
+.kpicard {
   background-color: #217055;
   padding: 1rem;
-  margin: 2rem;
   max-width: 300px;
   color: black;
   border-radius: 15px;

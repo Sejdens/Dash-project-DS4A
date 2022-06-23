@@ -36,13 +36,14 @@ app = dash.Dash(
 ################################################################################################
 # Navbar
 ################################################################################################
+dropdown_exclude = ["pages.not_found_404", "pages.about", "pages.test"] 
 navbar = dbc.NavbarSimple([
     dbc.NavItem(dbc.NavLink("About", href=request_path_prefix+"about")),
     dbc.DropdownMenu(
         [
             dbc.DropdownMenuItem(page["name"], href=page["path"])
             for page in dash.page_registry.values()
-            if page["module"] != "pages.not_found_404"
+            if page["module"] not in dropdown_exclude
         ],
         nav=True,
         label="Data Science",

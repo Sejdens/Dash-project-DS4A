@@ -42,7 +42,7 @@ navbar = dbc.NavbarSimple([
         [
             dbc.DropdownMenuItem(page["name"], href=page["path"])
             for page in dash.page_registry.values()
-            if page["module"] != "pages.not_found_404"
+            if page["module"] not in ["pages.not_found_404", "pages.about", "pages.test"]
         ],
         nav=True,
         label="Data Science",

@@ -23,12 +23,17 @@ nav {
 }
 
 .card {
+  padding: 1rem;
+  box-shadow: 4px 5px 2px #aaa;
+}
+
+.kpicard {
   background-color: #217055;
   padding: 1rem;
-  margin: 2rem;
   max-width: 300px;
   color: black;
   border-radius: 15px;
+  box-shadow: 4px 5px 2px #aaa;
 }
 
 .kpi__title {

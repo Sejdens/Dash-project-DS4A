@@ -52,11 +52,17 @@ layout = dbc.Container([
             dcc.Graph(figure=g,id='main-figure'),
             dcc.Slider(min=0,max=1,marks={0:'US Map', 1:'Scatter Plot'},value=0,id='fig-slider',),
         ],
-        lg=6,
+        lg=8,
+        className="card",
         ),
         dbc.Col([
             kpi_total.display(),
             kpi_vul.display(),
-        ])
-    ]),
-])
+        ],
+        lg=4,
+        className="col__kpi",
+        )
+    ],
+    ),
+],
+)

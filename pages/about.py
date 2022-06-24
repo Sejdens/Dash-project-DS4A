@@ -60,7 +60,6 @@ layout = dbc.Container([
             kpi_vul.display(),
         ],
         lg=4,
-        className="col__kpi",
         )
     ],
     ),

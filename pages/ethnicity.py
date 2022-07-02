@@ -6,7 +6,7 @@ from dash import dcc,html, Input, Output, callback
 
 register_page(__name__, path="/ethnicity")
 
-df = pd.read_csv("data/ethnicity.csv")
+df = pd.read_csv("data/ETHNICITY.csv")
 df["YEAR"] = df["YEAR"].astype(str)
 
 ethnicity_bar = px.bar(

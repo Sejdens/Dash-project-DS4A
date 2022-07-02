@@ -16,7 +16,7 @@ ethnicity_bar = px.bar(
         color="YEAR",
         barmode="group",
         title="Index by Ethnicity per Year",
-        labels={ "Ethnicity": "" },
+        labels={ "P6080": "" },
     )
 
 layout = dbc.Container([
@@ -52,6 +52,6 @@ def filter_bar(filter):
         color="YEAR",
         barmode="group",
         title="Index by Ethnicity per Year",
-        labels={ "":"Ethnicity" },
+        labels={ "P6080": "" },
     )
     return fig

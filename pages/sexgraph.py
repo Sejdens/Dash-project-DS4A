@@ -1,7 +1,6 @@
 import dash_bootstrap_components as dbc
 import plotly.express as px
 import pandas as pd
-import seaborn as sns
 from dash_labs.plugins import register_page
 from dash import dcc
 

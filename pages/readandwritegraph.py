@@ -2,7 +2,7 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 import pandas as pd
 from dash_labs.plugins import register_page
-from dash import dcc,html, Input, Output, callback
+from dash import dcc
 
 register_page(__name__, path="/readandwritegraph")
 

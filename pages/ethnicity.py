@@ -2,7 +2,7 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 import pandas as pd
 from dash_labs.plugins import register_page
-from dash import dcc,html, Input, Output, callback
+from dash import dcc, html, Input, Output, callback
 
 register_page(__name__, path="/ethnicity")
 
@@ -41,10 +41,9 @@ layout = dbc.Container([
 ])
 
 @callback(
-    Output("ethnicity-barplot", "figure"), 
+    Output("ethnicity-barplot", "figure"),
     Input("years-checklist", "value"))
 def filter_bar(filter):
-##    fig = px.imshow(df[df["YEAR"].isin(filter)])
     fig = px.bar(
         data_frame=df[df["YEAR"].isin(filter)],
         y="P6080",

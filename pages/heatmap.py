@@ -1,4 +1,3 @@
-import dash
 import dash_bootstrap_components as dbc
 from dash_labs.plugins import register_page
 
@@ -6,7 +5,7 @@ from components.kpi.kpicard import kpicard
 
 register_page(__name__, path="/heatmaps")
 
-from dash import Dash, dcc, html, Input, Output, callback
+from dash import dcc, html, Input, Output, callback
 import plotly.express as px
 
 df = px.data.medals_wide(indexed=True)
@@ -42,7 +41,7 @@ layout = dbc.Container([
 ])
 
 @callback(
-    Output("heatmaps-graph", "figure"), 
+    Output("heatmaps-graph", "figure"),
     Input("heatmaps-medals", "value"))
 def filter_heatmap(cols):
     fig = px.imshow(df[cols])

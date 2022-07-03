@@ -44,7 +44,6 @@ layout = dbc.Container([
     Output("clase-barplot", "figure"), 
     Input("clase-checklist", "value"))
 def filter_bar(filter):
-##    fig = px.imshow(df[df["YEAR"].isin(filter)])
     fig = px.bar(
         data_frame=df[df["YEAR"].isin(filter)],
         x="CLASE",

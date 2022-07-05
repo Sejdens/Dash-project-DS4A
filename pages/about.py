@@ -60,20 +60,20 @@ layout = dbc.Container([
                 dbc.Container([
                     html.H4("What is social vulnerability?"),
                     html.P(
-                        """Social vulnerability is the result of the impacts caused by the current development pattern, but it also expresses the inability of the weakest groups in society to face them, neutralize them or obtain benefits from them (...)"""
+                        """Social vulnerability is the result of the impacts caused by the current development pattern, but it also expresses the inability of the weakest groups in society to face them, neutralize them or obtain benefits from them. """
                     ),
                     html.H4(
                         "Why a vulnerability index in adults over 60 years of age?"),
                     html.P(
-                        """Although it is complex to establish why one age group is more vulnerable than another, it is evident that, specifically in old age, conditions appear that generate disadvantages or weaknesses to face unfavorable situations (...)"""
+                        """Although it is complex to establish why one age group is more vulnerable than another, it is evident that, specifically in old age, conditions appear that generate disadvantages or weaknesses to face unfavorable situations."""
                     ),
                     html.H4(
                         "Multidimensional Index of Vulnerability in Older Adults (“IMV”)"),
                     html.P(
-                        """For the construction of the multidimensional vulnerability index, the 2021 Quality of Life Survey (ECV) will be used as a source of information, which is carried out by the National Administrative Department of Statistics (DANE) in 9 main regions of Colombia (...)"""
+                        """For the construction of the multidimensional vulnerability index, the 2021 Quality of Life Survey (ECV) will be used as a source of information, which is carried out by the National Administrative Department of Statistics (DANE) in 9 main regions of Colombia."""
                     ),
                     html.P(
-                        """The calculation of the Multidimensional Vulnerability Index can be established as a weighted average per person over 60 years of age, in which 8 equally weighted dimensions are considered (the sum of all of them is 1) (...)"""
+                        """The calculation of the Multidimensional Vulnerability Index can be established as a weighted average per person over 60 years of age, in which 8 equally weighted dimensions are considered (the sum of all of them is 1)."""
                     ),
                 ],
                     fluid=True,

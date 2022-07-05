@@ -49,10 +49,12 @@ layout = dbc.Container([
                 step=1,
                 value=2021,
                 id="map-years",
+                updatemode="drag",
+                className="w-75",
             ),
         ],
         lg=8,
-        className='card m-1',
+        className='card m-1 align-items-center',
         ),
     ]),
 ])

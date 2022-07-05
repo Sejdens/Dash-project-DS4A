@@ -15,27 +15,28 @@ clase_bar = px.bar(
         y="Index",
         color="YEAR",
         barmode="group",
-        title="Index by Municipal Type per Year",
         labels={ "CLASE": "" },
     )
 
 layout = dbc.Container([
     dbc.Row([
-        html.P("Years:"),
-        dcc.Checklist(
-            ['2018', '2019', '2020','2021'],
-            ['2018', '2019', '2020','2021'],
-            inline=True,
-            id="clase-checklist"
-        ),
         dbc.Col([
+            html.H2("Index by Municipal Type"),
+            dcc.Checklist(
+                ['2018', '2019', '2020','2021'],
+                ['2018', '2019', '2020','2021'],
+                inline=True,
+                id="clase-checklist",
+                labelClassName="px-2",
+                inputClassName="mx-1",
+            ),
             dcc.Graph(
                 id="clase-barplot",
                 figure=clase_bar,
                 ),
         ],
         lg=8,
-        className='card',
+        className='card align-items-center',
         ),
     ]),
 ])
@@ -50,7 +51,6 @@ def filter_bar(filter):
         y="Index",
         color="YEAR",
         barmode="group",
-        title="Index by Municipal Type per Year",
         labels={ "CLASE": "" },
     )
     return fig

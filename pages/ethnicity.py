@@ -15,27 +15,28 @@ ethnicity_bar = px.bar(
         y="Index",
         color="YEAR",
         barmode="group",
-        title="Index by Ethnicity per Year",
         labels={ "P6080": "" },
     )
 
 layout = dbc.Container([
     dbc.Row([
-        html.P("Years:"),
-        dcc.Checklist(
-            ['2018', '2019', '2020','2021'],
-            ['2018', '2019', '2020','2021'],
-            inline=True,
-            id="years-checklist"
-        ),
         dbc.Col([
+            html.H2("Index by Ethnicity"),
+            dcc.Checklist(
+                ['2018', '2019', '2020','2021'],
+                ['2018', '2019', '2020','2021'],
+                inline=True,
+                id="years-checklist",
+                labelClassName="px-2",
+                inputClassName="mx-1",
+            ),
             dcc.Graph(
                 id="ethnicity-barplot",
                 figure=ethnicity_bar,
                 ),
         ],
         lg=8,
-        className='card',
+        className='card align-items-center',
         ),
     ]),
 ])
@@ -50,7 +51,6 @@ def filter_bar(filter):
         x="Index",
         color="YEAR",
         barmode="group",
-        title="Index by Ethnicity per Year",
         labels={ "P6080": "" },
     )
     return fig

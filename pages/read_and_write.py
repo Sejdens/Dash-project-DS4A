@@ -38,7 +38,7 @@ layout = dbc.Container([
         lg=8,
         className='card align-items-center',
         ),
-    ]),
+    ], className='justify-content-center'),
 ])
 
 @callback(

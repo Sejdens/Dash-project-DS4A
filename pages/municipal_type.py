@@ -4,7 +4,7 @@ import pandas as pd
 from dash_labs.plugins import register_page
 from dash import dcc, html, Input, Output, callback
 
-register_page(__name__, path="/graph")
+register_page(__name__, path="/municipal_type")
 
 df = pd.read_csv("data/CLASE.csv")
 df["YEAR"] = df["YEAR"].astype(str)

@@ -19,7 +19,7 @@ from components.kpi.kpicard import kpicard
 register_page(
     __name__,
     path="/",
-    redirect_from=["/about"],
+    redirect_from=["/home", "/about"],
 )
 
 ################################################################################################

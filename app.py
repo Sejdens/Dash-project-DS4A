@@ -46,7 +46,7 @@ navbar = dbc.NavbarSimple([
             if page["module"] not in dropdown_exclude
         ],
         nav=True,
-        label="Data Science",
+        label="Index Graphs",
     ),
     dbc.NavItem(dbc.NavLink("Test", href=request_path_prefix+"test")),
     ],

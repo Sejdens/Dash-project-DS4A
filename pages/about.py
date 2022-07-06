@@ -25,24 +25,15 @@ register_page(
 ################################################################################################
 # Load the data and create the map
 ################################################################################################
-df = pd.read_csv("./data/BASE_FINAL.csv")
+df = pd.read_csv("./data/DATA_KPI.csv")
 
-###############
-# Genero P6020
-###############
-dic_P6020 = {"1": "Male", "2": "Female"}
-df.P6020 = df.P6020.astype("str").replace(dic_P6020, regex=False)
-genero = df[["P6020", "FEX_C"]].groupby('P6020')['FEX_C'].sum().reset_index(
-    name="Total")  # con sum para sumar el factor de expancion
-g = px.bar(
-    x="P6020",
-    y="Total",
-    data_frame=genero,
-    title=("Distribution by Gender"),
-)
+
+
 # px.xlabel("Gender")
 # px.ylabel("Population")
 # px.xticks((0, 1), ("Male", "Female"))
+
+## df[["YEAR", "FEX_C"]].groupby('YEAR')['FEX_C'].sum().astype(str)
 
 kpi_total = kpicard("Total population", "7'428.432", "person.svg")
 kpi_vul = kpicard("Vulnerable People", "523.435", "charity.svg")
@@ -82,6 +73,12 @@ layout = dbc.Container([
 
             ], width={"size": 8}),
             dbc.Col([
+                html.P("Years:"),
+                dcc.RadioItems(
+                    ['2018', '2019', '2020','2021'],
+                    '2021',
+                    id="years-radiogroup"
+                ),
                 kpi_total.display(),
                 kpi_vul.display(),
             ])

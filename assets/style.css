@@ -58,3 +58,8 @@ nav {
 .kpi__icon {
   max-height: 3rem; 
 }
+
+.test{
+  width: 120px;
+  height: 100px;
+}

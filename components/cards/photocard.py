@@ -22,7 +22,7 @@ class photocard:
                     className="col-8",
                 ),
                 ],
-                className="g-0 d-flex align-items-center",
+                className="d-flex align-items-center my-auto",
                 ),
             className="m-2",
             style={ "maxWidth": "540px" },

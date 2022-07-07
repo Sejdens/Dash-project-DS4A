@@ -36,9 +36,9 @@ app = dash.Dash(
 ################################################################################################
 # Navbar
 ################################################################################################
-dropdown_exclude = ["pages.not_found_404", "pages.about", "pages.test"] 
+dropdown_exclude = ["pages.not_found_404", "pages.home", "pages.test"]
 navbar = dbc.NavbarSimple([
-    dbc.NavItem(dbc.NavLink("About", href=request_path_prefix)),
+    dbc.NavItem(dbc.NavLink("Home", href=request_path_prefix)),
     dbc.DropdownMenu(
         [
             dbc.DropdownMenuItem(page["name"], href=page["path"])
@@ -46,9 +46,9 @@ navbar = dbc.NavbarSimple([
             if page["module"] not in dropdown_exclude
         ],
         nav=True,
-        label="Data Science",
+        label="Index Graphs",
     ),
-    dbc.NavItem(dbc.NavLink("Test", href=request_path_prefix+"test")),
+    dbc.NavItem(dbc.NavLink("Team", href=request_path_prefix+"team")),
     ],
     brand="DS4A Project - Team 148",
     color="primary",

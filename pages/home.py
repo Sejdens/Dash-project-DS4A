@@ -1,12 +1,10 @@
 ################################################################################################
 # Libraries
 ################################################################################################
-import dash
-from dash import Dash, html, dcc, Input, Output, callback
+from dash import html, dcc, Input, Output, callback
 import dash_bootstrap_components as dbc
 from dash_labs.plugins import register_page
 import pandas as pd
-import plotly.express as px
 
 ################################################################################################
 # Import components
@@ -26,13 +24,6 @@ register_page(
 # Load the data and create the map
 ################################################################################################
 df = pd.read_csv("./data/DATA_KPI.csv", dtype = {"YEAR": str, "FEX_C": int})
-
-
-# px.xlabel("Gender")
-# px.ylabel("Population")
-# px.xticks((0, 1), ("Male", "Female"))
-
-## df[["YEAR", "FEX_C"]].groupby('YEAR')['FEX_C'].sum().astype(str)
 
 kpi_total = kpicard("Total population", "7'428.432", "person.svg", "total-population")
 

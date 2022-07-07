@@ -16,6 +16,9 @@ edgar = photocard("edgar.jpeg", "Edgar",
 jenny = photocard("jenny.jpeg", "Jenny",
                   "Economist and political scientist. Experienced in data analysis on conflict, security and migration issues.")
 
+moises = photocard("moises.jpg", "Moisés Herrera",
+                  "Musician, Language Activist and Web Developer, passionate about Open Source and Education.")
+
 layout = dbc.Container([
     dbc.Row([
         dbc.Col([
@@ -23,6 +26,7 @@ layout = dbc.Container([
             diana.display(),
             edgar.display(),
             jenny.display(),
+            moises.display(),
         ],
         className="d-flex flex-wrap justify-content-center",
         ),

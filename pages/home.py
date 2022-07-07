@@ -36,38 +36,36 @@ df = pd.read_csv("./data/DATA_KPI.csv", dtype = {"YEAR": str, "FEX_C": int})
 
 kpi_total = kpicard("Total population", "7'428.432", "person.svg", "total-population")
 
-semaforo = html.Div(
-    dbc.Container(
-        [
-            html.P(
-                "vulnerability level indicator",
-                className="lead",
+semaforo = html.Div([
+        html.P(
+            "vulnerability level indicator",
+            className="lead",
+        ),
+        html.P(
+            """Greem: Less vulnerability
+            Yellow: Medium vulnerability
+            Red: High vulnerability"""
+        ),
+        html.Div([
+            html.Div(
+                html.P("", id="less-vulnerable", className="m-auto"),
+                className="circle rounded-circle bg-success align-content-center d-flex",
             ),
-            html.P(
-                """Greem: Less vulnerability
-                Yellow: Medium vulnerability
-                Red: High vulnerability"""
+            html.Div(
+                html.P("", id="medium-vulnerable", className="m-auto"),
+                className="circle rounded-circle bg-warning align-content-center d-flex",
             ),
-            html.Hr(className="my-2"),
-
-            html.Div([
-                html.P("test",id="less-vulnerable")
-            ], className="circle rounded-circle bg-success text-center align-items-center justify-content-center m-auto d-flex"),
-
-            html.Hr(className="my-2"),
-            html.Div([
-                html.P("test",id="medium-vulnerable" )
-            ], className="circle yellow rounded-circle bg-warning text-center m-auto align-items-center justify-content-center d-flex"),
-            html.Hr(className="my-2"),
-            html.Div([
-                html.P("test",id="high-vulnerable" )
-            ], className="circle red rounded-circle bg-danger text-center m-auto align-items-center justify-content-center d-flex"),
+            html.Div(
+                html.P("", id="high-vulnerable", className="m-auto"),
+                className="circle rounded-circle bg-danger align-content-center d-flex",
+            ),
         ],
-        fluid=True,
-        className="py-3",
-    ),
-    className="p-3 bg-light rounded-3",
-)
+        className="d-flex justify-content-around",
+        )
+    ],
+    className="p-4 bg-light rounded-3 mb-2",
+    )
+
 ################################################################################################
 # Create Layout
 ################################################################################################
@@ -101,7 +99,6 @@ layout = dbc.Container([
                     className="p-2 bg-light rounded-3",
                     style={"maxWidth": "720px"},
                 ),
-
             ],
             className="col-12 col-lg-8",
             ),

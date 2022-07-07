@@ -101,7 +101,9 @@ layout = dbc.Container([
                     className="p-2 bg-light rounded-3",
                 ),
 
-            ], width={"size": 8}),
+            ],
+            className="col-12 col-lg-8",
+            ),
             dbc.Col([
                 html.P("Years:"),
                 dcc.RadioItems(

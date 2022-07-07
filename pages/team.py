@@ -1,8 +1,6 @@
 import dash_bootstrap_components as dbc
-from dash import html
 from dash_labs.plugins import register_page
 from components.cards.photocard import photocard
-
 
 register_page(__name__, path="/team")
 
@@ -20,11 +18,13 @@ jenny = photocard("jenny.jpeg", "Jenny",
 
 layout = dbc.Container([
     dbc.Row([
-        david.display(),
-        diana.display(),
-    ]),
-    dbc.Row([
-        edgar.display(),
-        jenny.display(),
+        dbc.Col([
+            david.display(),
+            diana.display(),
+            edgar.display(),
+            jenny.display(),
+        ],
+        className="d-flex flex-wrap justify-content-center",
+        ),
     ]),
 ], fluid=True)

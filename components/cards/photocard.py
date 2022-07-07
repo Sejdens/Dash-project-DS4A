@@ -19,7 +19,7 @@ class photocard:
                                 src=self.img,
                                 className="img-fluid rounded-start",
                             ),
-                            className="col-md-4",
+                            className="col-4",
                         ),
                         dbc.Col(
                             dbc.CardBody(
@@ -31,13 +31,13 @@ class photocard:
                                     ),
                                 ]
                             ),
-                            className="col-md-8",
+                            className="col-8",
                         ),
                     ],
                     className="g-0 d-flex align-items-center",
                 )
             ],
-            className="mb-3",
+            className="m-2",
             style={"maxWidth": "540px"},
         )
         return layout

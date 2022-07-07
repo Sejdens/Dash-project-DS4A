@@ -93,7 +93,7 @@ layout = dbc.Container([
                     ),
                 ],
                     fluid=True,
-                    className="p-2 bg-light rounded-3",
+                    className="p-4 bg-light rounded-3",
                     style={"maxWidth": "720px"},
                 ),
             ],

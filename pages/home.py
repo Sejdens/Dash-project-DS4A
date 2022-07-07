@@ -1,12 +1,10 @@
 ################################################################################################
 # Libraries
 ################################################################################################
-import dash
-from dash import Dash, html, dcc
+from dash import html, dcc, Input, Output, callback
 import dash_bootstrap_components as dbc
 from dash_labs.plugins import register_page
 import pandas as pd
-import plotly.express as px
 
 ################################################################################################
 # Import components
@@ -25,18 +23,45 @@ register_page(
 ################################################################################################
 # Load the data and create the map
 ################################################################################################
-df = pd.read_csv("./data/DATA_KPI.csv")
+df = pd.read_csv("./data/DATA_KPI.csv", dtype = {"YEAR": str, "FEX_C": int})
 
+kpi_total = kpicard("Total population", "7'428.432", "person.svg", "total-population")
 
+low_highlight = html.B("Low", className="text-success")
+medium_highlight = html.B("Medium", className="text-warning")
+high_highlight = html.B("High", className="text-danger")
 
-# px.xlabel("Gender")
-# px.ylabel("Population")
-# px.xticks((0, 1), ("Male", "Female"))
-
-## df[["YEAR", "FEX_C"]].groupby('YEAR')['FEX_C'].sum().astype(str)
-
-kpi_total = kpicard("Total population", "7'428.432", "person.svg")
-kpi_vul = kpicard("Vulnerable People", "523.435", "charity.svg")
+semaforo = html.Div([
+        html.P(
+            "Vulnerability Level Indicator",
+            className="lead",
+        ),
+        html.P([
+            "Number of people in ",
+            low_highlight, ", ",
+            medium_highlight, " and ",
+            high_highlight,
+            " vulnerability level.",
+        ]),
+        html.Div([
+            html.Div(
+                html.P("", id="less-vulnerable", className="m-auto"),
+                className="circle rounded-circle bg-success align-content-center d-flex",
+            ),
+            html.Div(
+                html.P("", id="medium-vulnerable", className="m-auto"),
+                className="circle rounded-circle bg-warning align-content-center d-flex",
+            ),
+            html.Div(
+                html.P("", id="high-vulnerable", className="m-auto"),
+                className="circle rounded-circle bg-danger align-content-center d-flex",
+            ),
+        ],
+        className="d-flex justify-content-around",
+        )
+    ],
+    className="p-4 mb-2",
+    )
 
 ################################################################################################
 # Create Layout
@@ -68,20 +93,40 @@ layout = dbc.Container([
                     ),
                 ],
                     fluid=True,
-                    className="p-2 bg-light rounded-3",
+                    className="p-4 bg-light rounded-3",
+                    style={"maxWidth": "720px"},
                 ),
-
-            ], width={"size": 8}),
+            ],
+            className="col-12 col-lg-8",
+            ),
             dbc.Col([
-                html.P("Years:"),
+                html.B("Year:", className="mb-0 mt-3"),
                 dcc.RadioItems(
-                    ['2018', '2019', '2020','2021'],
+                    ['2018', '2019', '2020', '2021'],
                     '2021',
-                    id="years-radiogroup"
+                    id="years-radiogroup",
+                    inputClassName="mx-1",
+                    labelClassName="mx-1",
                 ),
                 kpi_total.display(),
-                kpi_vul.display(),
-            ])
+                semaforo,
+            ],
+            className="d-flex flex-column align-items-center bg-light rounded-3",
+            )
         ]),
     ]),
 ])
+
+
+@callback(
+    Output("less-vulnerable", "children"),
+    Output("medium-vulnerable", "children"),
+    Output("high-vulnerable", "children"),
+    Output("total-population", "children"),
+    Input("years-radiogroup", "value"))
+def lessVulnerable(filter):
+    less = df[(df["YEAR"] == filter) & (df["VulnerabilityLevel"] == "Low")]["FEX_C"].values[0]
+    medium = df[(df["YEAR"] == filter) & (df["VulnerabilityLevel"] == "Medium")]["FEX_C"].values[0]
+    high = df[(df["YEAR"] == filter) & (df["VulnerabilityLevel"] == "High")]["FEX_C"].values[0]
+    total = df[df["YEAR"] == filter].groupby('YEAR')['FEX_C'].sum().values[0]
+    return format(less, ","), format(medium, ","), format(high, ","), format(total, ",")

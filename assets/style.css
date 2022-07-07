@@ -12,10 +12,6 @@ body {
   padding: 0;
 }
 
-nav {
-  background-color: #1a5a44;
-}
-
 .navbar {
   background-color: #339;
 }
@@ -26,12 +22,12 @@ nav {
 }
 
 .kpicard {
-  background-color: #217055;
+  background-color: #30a6b3;
   padding: 1rem;
   max-width: 300px;
   color: black;
   border-radius: 15px;
-  box-shadow: 4px 5px 2px #aaa;
+  box-shadow: 2px 2px 5px #aaa;
 }
 
 .kpi__title {
@@ -57,4 +53,9 @@ nav {
 
 .kpi__icon {
   max-height: 3rem; 
+}
+
+.circle{
+  width: 85px;
+  height: 85px;
 }

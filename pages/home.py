@@ -60,7 +60,7 @@ semaforo = html.Div([
         className="d-flex justify-content-around",
         )
     ],
-    className="p-4 bg-light rounded-3 mb-2",
+    className="p-4 mb-2",
     )
 
 ################################################################################################
@@ -100,15 +100,19 @@ layout = dbc.Container([
             className="col-12 col-lg-8",
             ),
             dbc.Col([
-                html.P("Years:"),
+                html.B("Year:", className="mb-0 mt-3"),
                 dcc.RadioItems(
                     ['2018', '2019', '2020', '2021'],
                     '2021',
-                    id="years-radiogroup"
+                    id="years-radiogroup",
+                    inputClassName="mx-1",
+                    labelClassName="mx-1",
                 ),
                 kpi_total.display(),
                 semaforo,
-            ])
+            ],
+            className="d-flex flex-column align-items-center bg-light rounded-3",
+            )
         ]),
     ]),
 ])

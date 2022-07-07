@@ -27,16 +27,22 @@ df = pd.read_csv("./data/DATA_KPI.csv", dtype = {"YEAR": str, "FEX_C": int})
 
 kpi_total = kpicard("Total population", "7'428.432", "person.svg", "total-population")
 
+low_highlight = html.B("Low", className="text-success")
+medium_highlight = html.B("Medium", className="text-warning")
+high_highlight = html.B("High", className="text-danger")
+
 semaforo = html.Div([
         html.P(
-            "vulnerability level indicator",
+            "Vulnerability Level Indicator",
             className="lead",
         ),
-        html.P(
-            """Greem: Less vulnerability
-            Yellow: Medium vulnerability
-            Red: High vulnerability"""
-        ),
+        html.P([
+            "Number of people in ",
+            low_highlight, ", ",
+            medium_highlight, " and ",
+            high_highlight,
+            " vulnerability level.",
+        ]),
         html.Div([
             html.Div(
                 html.P("", id="less-vulnerable", className="m-auto"),

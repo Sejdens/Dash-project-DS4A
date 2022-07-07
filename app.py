@@ -48,7 +48,7 @@ navbar = dbc.NavbarSimple([
         nav=True,
         label="Index Graphs",
     ),
-    dbc.NavItem(dbc.NavLink("Test", href=request_path_prefix+"test")),
+    dbc.NavItem(dbc.NavLink("Team", href=request_path_prefix+"team")),
     ],
     brand="DS4A Project - Team 148",
     color="primary",

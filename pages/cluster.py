@@ -14,13 +14,19 @@ cluster = px.scatter_3d(
         y="Living_place",
         z="Education",
         color="Cluster",
-        size_max=1,
         opacity=0.5,
         labels={
-          "Living_place": "Living place",
-          "Household_composition": "Household composition",
-          },
+            "Living_place": "Living place",
+            "Household_composition": "Household composition",
+        },
     )
+cluster.update_layout(
+    margin=dict(l=0, r=0, t=0, b=0),
+)
+cluster.update_traces(marker_size=6)
+# Change legend names
+for i in range(len(cluster.data)):
+    cluster.data[i].name = "Grupo " + str(i + 1)
 
 layout = dbc.Container([
     dbc.Row([

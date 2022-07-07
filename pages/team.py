@@ -4,10 +4,10 @@ from components.cards.photocard import photocard
 
 register_page(__name__, path="/team")
 
-david = photocard("david.jpeg", "David",
-                  "David Alexander Patarroyo Aponte, Systems Engineer, MBA, Specialist in BI.")
+david = photocard("david.jpeg", "David Alexander Patarroyo Aponte",
+                  "Systems Engineer, MBA, Specialist in BI.")
 
-diana = photocard("diana.jpeg", "Diana",
+diana = photocard("diana.jpeg", "Diana Aribel Guzmán",
                   "I am from Cali. I am a proactive and goal-oriented Industrial Engineer. I have been working for the last 5 years in multi-professional environments in the pharmaceutical industry. I love to learn, so I am a passionate for reading.")
 
 edgar = photocard("edgar.jpeg", "Edgar",

@@ -52,16 +52,16 @@ semaforo = html.Div(
 
             html.Div([
                 html.P("test",id="less-vulnerable")
-            ], className="test rounded-circle bg-success text-center align-items-center justify-content-center m-auto d-flex"),
+            ], className="circle rounded-circle bg-success text-center align-items-center justify-content-center m-auto d-flex"),
 
             html.Hr(className="my-2"),
             html.Div([
                 html.P("test",id="medium-vulnerable" )
-            ], className="test yellow rounded-circle bg-warning text-center m-auto align-items-center justify-content-center d-flex"),
+            ], className="circle yellow rounded-circle bg-warning text-center m-auto align-items-center justify-content-center d-flex"),
             html.Hr(className="my-2"),
             html.Div([
                 html.P("test",id="high-vulnerable" )
-            ], className="test red rounded-circle bg-danger text-center m-auto align-items-center justify-content-center d-flex"),
+            ], className="circle red rounded-circle bg-danger text-center m-auto align-items-center justify-content-center d-flex"),
         ],
         fluid=True,
         className="py-3",

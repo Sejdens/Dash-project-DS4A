@@ -5,7 +5,7 @@ from components.cards.photocard import photocard
 register_page(__name__, path="/team")
 
 andres = photocard("andres.jpeg", "Andres Leyva Cuenca",
-                  "I am from Barranquilla. Electronics Engineer in training. Web developer. Passionate about combining data with programming, I believe that the revolution right now and its potential is unlimited. I am always looking for something new to learn so I like to read and keep myself informed every day.")
+                  "I am from Barranquilla. Electronics Engineer in training. Web developer. Passionate for reading and education.")
 
 david = photocard("david.jpeg", "David Alexander Patarroyo Aponte",
                   "Systems Engineer, MBA, Specialist in BI.")

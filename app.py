@@ -36,7 +36,7 @@ app = dash.Dash(
 ################################################################################################
 # Navbar
 ################################################################################################
-dropdown_exclude = ["pages.not_found_404", "pages.home", "pages.test"]
+dropdown_exclude = ["pages.not_found_404", "pages.home", "pages.team"]
 navbar = dbc.NavbarSimple([
     dbc.NavItem(dbc.NavLink("Home", href=request_path_prefix)),
     dbc.DropdownMenu(

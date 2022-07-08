@@ -33,12 +33,14 @@ layout = dbc.Container([
             dcc.Graph(
                 id="ethnicity-barplot",
                 figure=ethnicity_bar,
-                ),
+                className="img-fluid",
+            ),
         ],
         lg=8,
         className='card align-items-center',
         ),
-    ], className='justify-content-center'),
+    ],
+    className='justify-content-center'),
 ])
 
 @callback(

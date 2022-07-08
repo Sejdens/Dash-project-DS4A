@@ -35,7 +35,8 @@ layout = dbc.Container([
             dcc.Graph(
                 id="cluster",
                 figure=cluster,
-                ),
+                className="img-fluid",
+            ),
         ],
         lg=8,
         className='card align-items-center',

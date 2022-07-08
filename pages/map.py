@@ -38,7 +38,8 @@ layout = dbc.Container([
             dcc.Graph(
                 id="map-graph",
                 figure=fig,
-                ),
+                className="img-fluid",
+            ),
             dcc.Slider(
                 marks={
                     2018: "2018",

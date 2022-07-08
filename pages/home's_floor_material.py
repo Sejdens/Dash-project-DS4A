@@ -33,7 +33,8 @@ layout = dbc.Container([
             dcc.Graph(
                 id="hometype-p4015-barplot",
                 figure=hometype_p4015_bar,
-                ),
+                className="img-fluid",
+            ),
         ],
         lg=8,
         className='card align-items-center',

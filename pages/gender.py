@@ -25,7 +25,8 @@ layout = dbc.Container([
             dcc.Graph(
                 id="gender-boxplot",
                 figure=gender_box,
-                ),
+                className="img-fluid",
+            ),
         ],
         lg=8,
         className='card align-items-center',

@@ -34,7 +34,8 @@ layout = dbc.Container([
             dcc.Graph(
                 id="region-barplot",
                 figure=region_bar,
-                ),
+                className="img-fluid",
+            ),
         ],
         lg=8,
         className='card align-items-center',

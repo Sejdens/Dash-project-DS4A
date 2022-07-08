@@ -13,7 +13,7 @@ diana = photocard("diana.jpeg", "Diana Aribel Guzmán",
 edgar = photocard("edgar.jpeg", "Edgar Dario Monsalve",
                   "I am from Arauca, I am a Statistician, I have experience as a data scientist and business analyst in fraud prevention in the financial sector, my greatest hobbies are riding a bicycle and watching formula 1")
 
-jenny = photocard("jenny.jpeg", "Jenny",
+jenny = photocard("jenny.jpeg", "Jenny Paola Rivera",
                   "Economist and political scientist. Experienced in data analysis on conflict, security and migration issues.")
 
 moises = photocard("moises.jpg", "Moisés Herrera",
